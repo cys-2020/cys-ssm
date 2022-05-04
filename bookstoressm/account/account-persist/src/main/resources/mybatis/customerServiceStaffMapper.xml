@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.UserDAO">
-	<sql id="allColumn">id,phone_number,e_mail,pswd,account_number,nice_name,id_number,addresses,baobao,lv</sql>
+<mapper namespace="dao.CustomerServiceStaffDAO">
+	<sql id="allColumn">id,user_id,nice_name</sql>
 
-	<select id="getUser" parameterType="long" resultType="user">
+	<select id="getCustomerServiceStaff" parameterType="long" resultType="customerServiceStaff">
 		select 
 			<include refid="allColumn"/>
-		from t_user where id=#{id}
+		from t_customer_service_staff where id=#{id}
 	</select>
 	
-	<insert id="insertUser" parameterType="user" 
+	<insert id="insertCustomerServiceStaff" parameterType="customerServiceStaff" 
 									useGeneratedKeys="true" keyProperty="id">
-		insert into t_user values(null,#{phoneNumber},#{eMail},#{pswd},#{accountNumber},#{niceName},#{idNumber},#{addresses},#{baobao},#{lv})
+		insert into t_customer_service_staff values(null,#{userId},#{niceName})
 	</insert>
 	
-	<update id="updateUser" parameterType="user">
-		update t_user
+	<update id="updateCustomerServiceStaff" parameterType="customerServiceStaff">
+		update t_customer_service_staff
 		<set>
 			<if test="phoneNumber!=null">
 				phone_number=#{phoneNumber},
@@ -43,8 +43,8 @@
 		where id=#{id}
 	</update>
 	
-	<delete id="deleteUser" parameterType="user">
-		delete from t_user where id=#{id}
+	<delete id="deleteCustomerServiceStaff" parameterType="customerServiceStaff">
+		delete from t_customer_service_staff where id=#{id}
 	</delete>
 	
 </mapper>

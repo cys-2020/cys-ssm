@@ -1,5 +1,9 @@
 package service;
-
+/**
+ * @description 账户User的服务类
+ * @author cys(ChenYongsheng)
+ * @date 2022年5月4日
+ */
 import org.springframework.stereotype.Service;
 
 import manager.UserManager;

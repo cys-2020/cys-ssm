@@ -19,14 +19,11 @@
 	</settings>
 
 	<typeAliases>
-		<package name="pojos"/>
+		<package name="pb.publicpojos"/>
 	</typeAliases>
 	<!-- 遇到Sex类型时，用自定义Handler进行类型转换-->
 	<typeHandlers>
-		<typeHandler handler="mybatis.SexEnumTypeHandler" 
-			javaType="mybatis.Sex" />
-		<typeHandler handler="mybatis.StudentFavorEnumTypeHandler" 
-			javaType="pojos.StudentFavor" />
+		
 	</typeHandlers>
 	
 	<!--  	-->
@@ -44,15 +41,11 @@
 		</environment>
 	</environments>
 
-	<!-- 执行语句的连接	-->
+	<!-- 注册mapper-dao -->
 	<mappers>
-		<mapper resource="mybatis/myRoleMapper.xml"/>
-		<mapper resource="mybatis/sql.xml"/>
-		<mapper resource="mybatis/studentMapper.xml"/>
-		<mapper resource="mybatis/studentFavorMapper.xml"/>
-		<mapper resource="mybatis/studentProdegreeMapper.xml"/>
-		<mapper resource="mybatis/studentCardMapper.xml"/>
-		<mapper resource="mybatis/studentChecksMapper.xml"/>
+		<mapper resource="mybatis/userMapper.xml"/>
+		<mapper resource="mybatis/sellerMappper.xml"/>
+		<mapper resource="mybatis/customerServiceStaffMapper.xml"/>
 	</mappers>
 
 </configuration>

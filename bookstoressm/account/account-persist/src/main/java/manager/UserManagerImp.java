@@ -1,13 +1,10 @@
 package manager;
-
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
-
 import org.springframework.transaction.annotation.Transactional;
-
 import dao.UserDAO;
 import publicpojos.User;
-
-
+@Component
 public class UserManagerImp implements UserManager{
 	private UserDAO dao;
 	

@@ -2,8 +2,7 @@ package service;
 import publicpojos.User;
 
 /**
- * 
- *	@description 定义了所有复杂的业务逻辑
+ *	@description 定义了账户User中所有的业务逻辑
  *	@author cys(ChenYongsheng)
  * 	@date 2022年4月25日
  */
