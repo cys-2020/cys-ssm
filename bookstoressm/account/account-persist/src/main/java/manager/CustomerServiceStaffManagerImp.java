@@ -13,6 +13,12 @@ import publicpojos.CustomerServiceStaff;
 @Component
 public class CustomerServiceStaffManagerImp implements CustomerServiceStaffManager {
 	private CustomerServiceStaffDAO dao;
+	
+	public CustomerServiceStaffManagerImp(CustomerServiceStaffDAO dao) {
+		System.err.println("ÓÐÃ»ÓÐcssDAO£¿"+(dao!=null));
+		this.dao = dao;
+	}
+
 	@Override
 	public CustomerServiceStaff getCustomerServiceStaff(long id) {
 		//

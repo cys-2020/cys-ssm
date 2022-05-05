@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import dao.UserDAO;
+import manager.UserManagerImp;
 import service.UserServiceImp;
 import java.io.IOException;
 import java.util.Properties;
@@ -21,8 +22,8 @@ import org.springframework.context.annotation.*;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan(basePackageClasses=UserDAO.class)
-@ComponentScan(basePackageClasses=UserServiceImp.class,
+@MapperScan(basePackageClasses= {UserDAO.class})
+@ComponentScan(basePackageClasses= {UserServiceImp.class,UserManagerImp.class},
 	excludeFilters= {
 		@Filter(type=FilterType.ANNOTATION,value=EnableWebMvc.class)})
 public class WebmvcRootConfigs {
@@ -37,7 +38,7 @@ public class WebmvcRootConfigs {
 				BasicDataSource bds=new BasicDataSource();
 				bds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 				bds.setUrl(//要用jdabTemplate才行
-						"jdbc:mysql://localhost:3306/mybatis?rewriteBatchedStatements=true");
+						"jdbc:mysql://localhost:3306/ssm?rewriteBatchedStatements=true");
 				bds.setUsername("root");
 				bds.setPassword("cys2022!");
 				bds.setMaxActive(10);

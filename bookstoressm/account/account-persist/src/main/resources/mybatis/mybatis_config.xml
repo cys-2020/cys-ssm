@@ -19,7 +19,7 @@
 	</settings>
 
 	<typeAliases>
-		<package name="pb.publicpojos"/>
+		<package name="pb.src.main.java.publicpojos"/>
 	</typeAliases>
 	<!-- 遇到Sex类型时，用自定义Handler进行类型转换-->
 	<typeHandlers>
@@ -44,7 +44,7 @@
 	<!-- 注册mapper-dao -->
 	<mappers>
 		<mapper resource="mybatis/userMapper.xml"/>
-		<mapper resource="mybatis/sellerMappper.xml"/>
+		<mapper resource="mybatis/sellerMapper.xml"/>
 		<mapper resource="mybatis/customerServiceStaffMapper.xml"/>
 	</mappers>
 

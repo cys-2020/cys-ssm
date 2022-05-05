@@ -13,6 +13,7 @@ public class UserServiceImp implements UserService {
 	private UserManager manager;
 	
 	public UserServiceImp(UserManager manager) {
+		System.err.println("ÓÐÃ»ÓÐmanager?"+(manager!=null));
 		this.manager = manager;
 	}
 

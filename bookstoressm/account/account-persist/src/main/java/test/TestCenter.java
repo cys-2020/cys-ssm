@@ -1,6 +1,7 @@
 package test;
 import org.apache.ibatis.session.SqlSession;
 
+
 import org.junit.Test;
 
 import org.junit.runner.RunWith;
@@ -32,10 +33,18 @@ import org.springframework.web.servlet.view.InternalResourceView;
 
 
 import configs.*;
+import controller.TestController;
+import service.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=WebmvcRootConfigs.class)
 
 public class TestCenter {
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private SellerService sellerService;
+	@Autowired
+	private CustomerServiceStaffService cssService;
 	/*@Autowired
 	private RoleService roleService;
 	@Autowired
@@ -95,4 +104,26 @@ public class TestCenter {
 			System.err.println("«Î«Û ß∞‹£°£°£°");
 		}
 	}*/
+	@Test
+	public void testUser() throws Exception {
+		TestController con=new TestController(userService, sellerService, cssService);
+		MockMvc mockmvc=standaloneSetup(con).setSingleView(
+				new InternalResourceView("/resources/shuoshuos.html")).build();
+		
+			mockmvc.perform(get("/getUser?id=1"));
+	}
+	@Test
+	public void testSeller() throws Exception {
+		TestController con=new TestController(userService, sellerService, cssService);
+		MockMvc mockmvc=standaloneSetup(con).setSingleView(
+				new InternalResourceView("/resources/shuoshuos.html")).build();
+			mockmvc.perform(get("/getSeller?id=1"));
+	}
+	@Test
+	public void testCss() throws Exception {
+		TestController con=new TestController(userService, sellerService, cssService);
+		MockMvc mockmvc=standaloneSetup(con).setSingleView(
+				new InternalResourceView("/resources/shuoshuos.html")).build();
+			mockmvc.perform(get("/getCss?id=1"));
+	}
 }

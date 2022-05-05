@@ -1,5 +1,7 @@
 package service;
 
+import org.springframework.stereotype.Service;
+
 import manager.SellerManager;
 import publicpojos.Seller;
 
@@ -8,6 +10,7 @@ import publicpojos.Seller;
  *	@author cys(ChenYongsheng)
  * 	@date 2022Äê5ÔÂ4ÈÕ
  */
+@Service
 public class SellerServiceImp implements SellerService {
 	private SellerManager manager;
 	

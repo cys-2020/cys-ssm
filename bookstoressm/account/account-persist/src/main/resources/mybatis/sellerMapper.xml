@@ -4,18 +4,18 @@
 <mapper namespace="dao.SellerDAO">
 	<sql id="allColumn">id,user_id,score,credibility,store_number</sql>
 
-	<select id="getSeller" parameterType="long" resultType="seller">
+	<select id="getSeller" parameterType="long" resultType="publicpojos.Seller">
 		select
 			<include refid="allColumn"/>
 		from t_seller where id=#{id}
 	</select>
 	
-	<insert id="insertSeller" parameterType="seller" 
+	<insert id="insertSeller" parameterType="publicpojos.Seller" 
 									useGeneratedKeys="true" keyProperty="id">
 		insert into t_seller values(null,#{userId},#{score},#{credibility},#{storeNumber})
 	</insert>
 	
-	<update id="updateSeller" parameterType="seller">
+	<update id="updateSeller" parameterType="publicpojos.Seller">
 		update t_seller
 		<set>
 			<if test="score!=null">
@@ -31,7 +31,7 @@
 		where id=#{id}
 	</update>
 	
-	<delete id="deleteSeller" parameterType="seller">
+	<delete id="deleteSeller" parameterType="publicpojos.Seller">
 		delete from t_seller where id=#{id}
 	</delete>
 	

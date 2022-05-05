@@ -13,6 +13,12 @@ import publicpojos.Seller;
 @Component
 public class SellerManagerImp implements SellerManager {
 	private SellerDAO dao;
+	
+	public SellerManagerImp(SellerDAO dao) {
+		System.err.println("ÓÐÃ»ÓÐsellerDAO£¿"+(dao!=null));
+		this.dao = dao;
+	}
+
 	@Override
 	public Seller getSeller(long id) {
 		//

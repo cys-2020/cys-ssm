@@ -1,5 +1,7 @@
 package service;
 
+import org.springframework.stereotype.Service;
+
 import manager.CustomerServiceStaffManager;
 import publicpojos.CustomerServiceStaff;
 
@@ -8,6 +10,7 @@ import publicpojos.CustomerServiceStaff;
  *	@author cys(ChenYongsheng)
  * 	@date 2022Äê5ÔÂ4ÈÕ
  */
+@Service
 public class CustomerServiceStaffServiceImp implements CustomerServiceStaffService {
 	private CustomerServiceStaffManager manager;
 	

@@ -1,6 +1,6 @@
 package publicpojos;
-
-import java.util.List;
+import tools.*;
+import java.util.ArrayList;
 /**
  *	@description User has user info
  *	@author cys(ChenYongsheng)
@@ -14,7 +14,7 @@ public class User {
 	private String accountNumber;
 	private String niceName;
 	private String idNumber;
-	private List<String> addresses;
+	private String addresses;
 	private int baobao;
 	private short lv;
 	public User() {
@@ -94,12 +94,13 @@ public class User {
 	}
 
 
-	public List<String> getAddresses() {
+	public String getAddresses() {
+		
 		return addresses;
 	}
 
-
-	public void setAddresses(List<String> addresses) {
+	
+	public void setAddresses(String addresses) {
 		this.addresses = addresses;
 	}
 

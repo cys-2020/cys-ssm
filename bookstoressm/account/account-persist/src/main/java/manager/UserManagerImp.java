@@ -9,7 +9,7 @@ public class UserManagerImp implements UserManager{
 	private UserDAO dao;
 	
 	public UserManagerImp(UserDAO dao) {
-		super();
+		System.err.println("ÓÐÃ»ÓÐuserDAO£¿"+(dao!=null));
 		this.dao = dao;
 	}
 	@Transactional(rollbackFor=Exception.class,

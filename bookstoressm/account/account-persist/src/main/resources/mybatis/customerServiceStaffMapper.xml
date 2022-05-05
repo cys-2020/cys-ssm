@@ -4,18 +4,18 @@
 <mapper namespace="dao.CustomerServiceStaffDAO">
 	<sql id="allColumn">id,user_id,nice_name</sql>
 
-	<select id="getCustomerServiceStaff" parameterType="long" resultType="customerServiceStaff">
+	<select id="getCustomerServiceStaff" parameterType="long" resultType="publicpojos.CustomerServiceStaff">
 		select 
 			<include refid="allColumn"/>
 		from t_customer_service_staff where id=#{id}
 	</select>
 	
-	<insert id="insertCustomerServiceStaff" parameterType="customerServiceStaff" 
+	<insert id="insertCustomerServiceStaff" parameterType="publicpojos.CustomerServiceStaff" 
 									useGeneratedKeys="true" keyProperty="id">
 		insert into t_customer_service_staff values(null,#{userId},#{niceName})
 	</insert>
 	
-	<update id="updateCustomerServiceStaff" parameterType="customerServiceStaff">
+	<update id="updateCustomerServiceStaff" parameterType="publicpojos.CustomerServiceStaff">
 		update t_customer_service_staff
 		<set>
 			<if test="phoneNumber!=null">
@@ -43,7 +43,7 @@
 		where id=#{id}
 	</update>
 	
-	<delete id="deleteCustomerServiceStaff" parameterType="customerServiceStaff">
+	<delete id="deleteCustomerServiceStaff" parameterType="publicpojos.CustomerServiceStaff">
 		delete from t_customer_service_staff where id=#{id}
 	</delete>
 	

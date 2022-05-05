@@ -6,10 +6,16 @@
     <groupId>com.cys.bookstoressm</groupId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  <groupId>com.cys.bookstoressm</groupId>
   <artifactId>account-message</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <name>account-message</name>
   
   <dependencies>
+  <dependency>
+	    <groupId>commons-collections</groupId>
+	    <artifactId>commons-collections</artifactId>
+	</dependency>
 	  		<dependency>
 	  		<groupId>mysql</groupId>
 	  		<artifactId>mysql-connector-java</artifactId>
@@ -61,8 +67,16 @@
 	            <artifactId>log4j</artifactId>
 	        </dependency>
 	        <dependency>
-	            <groupId>org.slf4j</groupId>
-	            <artifactId>slf4j-api</artifactId>
-	        </dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	</dependency>
   </dependencies>
 </project>
