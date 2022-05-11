@@ -1,13 +1,20 @@
-<!-- 模板pom -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 模板pom --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>${groupId}</groupId>
-  <artifactId>${artifactId}</artifactId>
-  <version>${version}</version>
-  <name>${artifactId}</name>
+  <parent>
+    <artifactId>chat</artifactId>
+    <groupId>com.cys.bookstoressm</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>chat-persist</artifactId>
+  <name>Chat-persist</name>
   
   <dependencies>
-  
+  <dependency>
+  		<groupId>com.cys.bookstoressm</groupId>
+  		<artifactId>pb</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   	<dependency>
 	    <groupId>commons-collections</groupId>
 	    <artifactId>commons-collections</artifactId>

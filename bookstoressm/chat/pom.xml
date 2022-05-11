@@ -5,6 +5,11 @@
     <artifactId>bookstoressm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+   <groupId>com.cys.bookstoressm</groupId>
   <artifactId>chat</artifactId>
   <packaging>pom</packaging>
+  <name>Chat</name>
+  <modules>
+  	<module>chat-persist</module>
+  </modules>
 </project>

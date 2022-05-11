@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 
+	<properties resource="properties/jdbc.properties"/> -->
+	<settings>
+        <!-- 开启log4j来记录日志 -->
+        <setting name="logImpl" value="log4j"/>
+		<setting name="defaultStatementTimeout" value="25"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<!-- 开启自定义（级联时fetchType=按需加载 -->
+		<setting name="lazyLoadingEnabled" value="true"  />
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<setting name="lazyLoadTriggerMethods" value=""/>
+		<!-- 开启批量更新（sqlsession.flushStatements可提交前面已缓存的语句） -->
+		<setting name="defaultExecutorType" value="BATCH"/>
+		
+	</settings>
+
+	<typeAliases>
+		<package name="pb.src.main.java.publicpojos"/>
+	</typeAliases>
+	<!-- 遇到Sex类型时，用自定义Handler进行类型转换-->
+	<typeHandlers>
+		
+	</typeHandlers>
+	
+	<!--  	-->
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="false"/>
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/> 
+				<property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+				<property name="username" value="root"/>
+				<property name="password" value="cys2022!"/>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 注册mapper-dao -->
+	<mappers>
+		<mapper resource="mybatis/chatMapper.xml"/>
+	</mappers>
+
+</configuration>

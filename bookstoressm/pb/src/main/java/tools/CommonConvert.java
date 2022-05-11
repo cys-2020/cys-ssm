@@ -3,7 +3,7 @@ package tools;
 import java.util.ArrayList;
 
 /**
- *	@description 底层泛型数据格式转换
+ *	@description 底层通用数据格式转换
  *	@author cys(ChenYongsheng)
  * 	@date 2022年5月5日
  */
